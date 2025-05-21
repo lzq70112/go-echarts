@@ -133,7 +133,7 @@ type Blur struct {
 type Emphasis struct {
 	// the emphasis style of label
 	Label *Label `json:"label,omitempty"`
-
+	Focus string `json:"focus,omitempty"`
 	// the emphasis style of item
 	ItemStyle *ItemStyle `json:"itemStyle,omitempty"`
 }
