@@ -137,6 +137,11 @@ type Emphasis struct {
 	// the emphasis style of item
 	ItemStyle *ItemStyle `json:"itemStyle,omitempty"`
 }
+type EndLabel struct {
+	Show      types.Bool    `json:"show,omitempty"`
+	Position  string        `json:"position,omitempty"`
+	Formatter types.FuncStr `json:"formatter,omitempty"`
+}
 
 // Animation represents animation behaviors of series.
 type Animation struct {

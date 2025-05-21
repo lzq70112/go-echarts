@@ -165,6 +165,7 @@ type SingleSeries struct {
 	*opts.Emphasis      `json:"emphasis,omitempty"`
 	*opts.MarkLines     `json:"markLine,omitempty"`
 	*opts.MarkAreas     `json:"markArea,omitempty"`
+	*opts.EndLabel      `json:"endLabel,omitempty"`
 	*opts.MarkPoints    `json:"markPoint,omitempty"`
 	*opts.RippleEffect  `json:"rippleEffect,omitempty"`
 	*opts.LineStyle     `json:"lineStyle,omitempty"`
@@ -184,6 +185,12 @@ type SingleSeriesOptFunc func(s *SingleSeries)
 func WithSeriesOpts(opf SingleSeriesOptFunc) SeriesOpts {
 	return func(s *SingleSeries) {
 		opf(s)
+	}
+}
+func WithEndLabelOpts(opt opts.EndLabel) SeriesOpts {
+	return func(s *SingleSeries) {
+
+		s.EndLabel = &opt
 	}
 }
 
